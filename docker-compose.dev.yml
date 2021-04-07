@@ -1,0 +1,32 @@
+version: '3'
+services:
+  sftp:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile.sftp
+    command: npm run sftpDev
+    volumes:
+      - .:/usr/jupiter-sftp:cached
+      - /usr/jupiter-sftp/node_modules
+    ports:
+      - '8022:8022'
+    env_file:
+      - .env
+    environment:
+      - SFTP_PORT=8022
+
+  web:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - .:/usr/jupiter-sftp:cached
+      - /usr/jupiter-sftp/node_modules
+    ports:
+      - '8000:8000'
+    env_file:
+      - .env
+    environment:
+      - PORT=8000

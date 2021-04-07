@@ -1,0 +1,18 @@
+# Base image
+FROM node:14.16.0
+
+LABEL AUTHOR="Lance Whatley"
+
+# specify working directory
+WORKDIR /usr/jupiter-sftp
+
+# Install dependencies
+COPY package*.json ./
+RUN npm install
+
+# Copy the remainder of the source code and build
+COPY . .
+RUN npm run build
+
+# Default command
+CMD npm start
