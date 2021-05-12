@@ -4,7 +4,7 @@
   "description": "SFTP server to support a backend of storing files on the Jupiter blockchain",
   "repository": {
     "type": "git",
-    "url": "https://github.com/whatl3y/jupiter-sftp"
+    "url": "https://github.com/moontography/jupiter-sftp"
   },
   "scripts": {
     "build": "npx tsc",

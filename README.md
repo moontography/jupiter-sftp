@@ -8,12 +8,12 @@ A small [SFTP](https://www.ssh.com/academy/ssh/sftp) server that allows browsing
 
 This repo contains two server components (one web server and one SFTP). Once the SFTP server is running, it can be connected to by any SFTP client (think things like FileZilla, Cyberduck, or any other GUI or CLI-based SFTP clients). The web server is meant to simply provide documentation (i.e what you're reading now).
 
-### Cyberduck Example
+### GUI Client Example
 
-You should connect to either a server you setup with this repo, or a Jupiter supported public server.
+You should connect to either a server you setup with this repo (i.e. `sftp://localhost:8022`), or a Jupiter supported public server.
 
 - **Username:** _Your funded mainnet JUP-XXXX-XXXX... Jupiter address_
-- **Password:** _passphrase for the JUP-XXXX-XXXX... Jupiter address_
+- **Password:** _secret passphrase for the JUP-XXXX-XXXX... Jupiter address_
 
 TODO: Screenshot(s)
 
@@ -22,7 +22,7 @@ TODO: Screenshot(s)
 The quickest way to run both servers is with docker and docker-compose. If you have these installed, you should be able to execute the following in a terminal and get the web server running on `http://localhost:8000` and SFTP server running on `sftp://localhost:8022`
 
 ```sh
-$ git clone https://github.com/whatl3y/jupiter-sftp
+$ git clone https://github.com/moontography/jupiter-sftp
 $ cd jupiter-sftp
 $ touch .env
 $ docker-compose up
@@ -34,7 +34,7 @@ $ docker-compose up
 
 There's a `Dockerfile` to allow you to build the container and deploy in any infrastructure or orchestration engine you'd like to use. However, for a really simple deployment that isn't supporting tons of users, you can just deploy using the normal docker compose config.
 
-You can use `-f docker-compose.dev.yml` when running `docker-compose` if you'd like to map your local machine's file system build folder to a volume in the container to ease development when making changes. If you want to deploy `jupiter-git` to production/a public URL, it's recommended to use the normal `docker-compose.yml` configuration to ensure the build and execution is entirely inside the container.
+You can use `-f docker-compose.dev.yml` when running `docker-compose` if you'd like to map your local machine's file system build folder to a volume in the container to ease development when making changes. If you want to deploy `jupiter-sftp` to production/a public URL, it's recommended to use the normal `docker-compose.yml` configuration to ensure the build and execution is entirely inside the container.
 
 ```sh
 $ # no need to specify a file w/ `-f` since docker-compose.yml is the default

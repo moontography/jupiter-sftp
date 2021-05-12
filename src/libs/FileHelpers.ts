@@ -80,7 +80,7 @@ export default {
               <div class="notice">
                 You navigated to a Jupiter SFTP server to store your files in a
                 decentralized way on the Jupiter blockchain. Learn more below or by visiting
-                <a href="https://github.com/whatl3y/jupiter-sftp">https://github.com/whatl3y/jupiter-sftp</a>
+                <a href="https://github.com/moontography/jupiter-sftp">https://github.com/moontography/jupiter-sftp</a>
               </div>
               ${bodyHtml}
             </div>
